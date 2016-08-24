@@ -50,5 +50,7 @@ class RtmEventHandler(object):
                     self.msg_writer.demo_attachment(event['channel'])
                 elif 'pun' in msg_txt:
                     self.msg_writer.write_pun(event['channel'])
+                elif 'event' in msg_txt:
+                    self.msg_writer.write_event(event)
                 else:
                     self.msg_writer.write_prompt(event['channel'])
