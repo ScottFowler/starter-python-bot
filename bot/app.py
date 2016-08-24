@@ -27,25 +27,6 @@ if __name__ == "__main__":
         res = resourcer.Resourcer(botManager)
         res.start()
     else:
-        var Botkit = require('botkit');
-
-        var controller = Botkit.slackbot({
-          debug: false
-          //include "log: false" to disable logging
-          //or a "logLevel" integer from 0 to 7 to adjust logging verbosity
-        });
-        
-        // connect the bot to a stream of messages
-        controller.spawn({
-          token: slack_token,
-        }).startRTM()
-        
-        // give the bot something to listen for.
-        controller.hears('hello',['direct_message','direct_mention','mention'],function(bot,message) {
-        
-          bot.reply(message,'Hello yourself.');
-        
-        });
         # only want to run a single instance of the bot in dev mode
         #bot = SlackBot(slack_token)
         #bot.start({})
