@@ -28,5 +28,5 @@ if __name__ == "__main__":
         res.start()
     else:
         # only want to run a single instance of the bot in dev mode
-        #bot = SlackBot(slack_token)
-        #bot.start({})
+        bot = SlackBot(slack_token)
+        bot.start({})
