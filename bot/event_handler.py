@@ -38,17 +38,17 @@ class RtmEventHandler(object):
 
             msg_txt = event['text']
 
-            #if self.clients.is_bot_mention(msg_txt):
-            # e.g. user typed: "@pybot tell me a joke!"
-            if 'help' in msg_txt:
-                self.msg_writer.write_help_message(event['channel'])
-            elif re.search('hi|hey|hello|howdy', msg_txt):
-                self.msg_writer.write_greeting(event['channel'], event['user'])
-            elif 'joke' in msg_txt:
-                self.msg_writer.write_joke(event['channel'])
-            elif 'attachment' in msg_txt:
-                self.msg_writer.demo_attachment(event['channel'])
-            elif 'pun' in msg_txt:
-                self.msg_writer.write_pun(event['channel'])
-            else:
-                self.msg_writer.write_prompt(event['channel'])
+            if self.clients.is_bot_mention(msg_txt):
+                # e.g. user typed: "@pybot tell me a joke!"
+                if 'help' in msg_txt:
+                    self.msg_writer.write_help_message(event['channel'])
+                elif re.search('hi|hey|hello|howdy', msg_txt):
+                    self.msg_writer.write_greeting(event['channel'], event['user'])
+                elif 'joke' in msg_txt:
+                    self.msg_writer.write_joke(event['channel'])
+                elif 'attachment' in msg_txt:
+                    self.msg_writer.demo_attachment(event['channel'])
+                elif 'pun' in msg_txt:
+                    self.msg_writer.write_pun(event['channel'])
+                else:
+                    self.msg_writer.write_prompt(event['channel'])
