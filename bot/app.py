@@ -37,7 +37,7 @@ if __name__ == "__main__":
         
         // connect the bot to a stream of messages
         controller.spawn({
-          token: <my_slack_bot_token>,
+          token: slack_token,
         }).startRTM()
         
         // give the bot something to listen for.
