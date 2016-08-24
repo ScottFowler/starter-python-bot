@@ -26,6 +26,12 @@ class Messenger(object):
             "> `<@" + bot_uid + "> attachment` - I'll demo a post with an attachment using the Web API. :paperclip:")
         self.send_message(channel_id, txt)
     
+    def write_event(self, event):
+        message = ""
+        for k in event.keys():
+            message += "%s: %s\n" %(k, event[k])
+        self.send_message(event['channel'], message)
+        
     def write_pun(self, channel_id):
         pun = "Did you hear about the guy whose whole left side was cut off? He's all right now."
         self.send_message(channel_id, pun)
